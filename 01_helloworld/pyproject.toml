@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "01-helloworld"
+version = "0.1.0"
+description = ""
+authors = ["Asharib <asharibarain4@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = {extras = ["all"], version = "^0.115.6"}
+uvicorn = "^0.34.0"
+pydantic = "^2.10.5"
+langchain-google-genai = "^2.0.8"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

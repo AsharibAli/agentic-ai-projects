@@ -1,1 +1,1 @@
-# Agentia Projects
+# Agentic AI Projects

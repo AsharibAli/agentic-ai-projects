@@ -1,0 +1,47 @@
+# This workflow will run integration tests for the current project once per day
+
+name: Integration Tests
+
+on:
+  push:
+    branches:
+      - main
+      - 'feature/*'
+  workflow_dispatch: # Allows triggering the workflow manually in GitHub UI
+
+# If another scheduled run starts while this workflow is still running,
+# cancel the earlier run in favor of the next run.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  integration-tests:
+    name: Integration Tests
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        python-version: ["3.11", "3.12"]
+    runs-on: ${{ matrix.os }}
+    env:
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      LANGCHAIN_API_KEY: ${{ secrets.LANGCHAIN_API_KEY }}
+      LANGSMITH_TRACING: false
+      LANGCHAIN_TRACING_V2: false
+      LANGSMITH_TEST_CACHE: tests/cassettes
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          uv venv
+          source .venv/bin/activate
+          uv pip install -r pyproject.toml
+          uv pip install -U pytest-asyncio vcrpy
+      - name: Run integration tests
+        run: |
+          uv run pytest tests/integration_tests

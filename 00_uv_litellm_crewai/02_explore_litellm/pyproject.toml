@@ -1,0 +1,20 @@
+[project]
+name = "explore-litellm"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Asharib", email = "asharibali@proton.me" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "litellm>=1.60.0",
+]
+
+[project.scripts]
+openai = "explore_litellm.main:openai"
+gemini = "explore_litellm.main:gemini"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

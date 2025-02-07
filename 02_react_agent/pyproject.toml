@@ -1,0 +1,65 @@
+[project]
+name = "react-agent"
+version = "0.0.1"
+description = "React Agent for hands on practice"
+authors = [
+    { name = "Asharib Ali", email = "asharibali@proton.me" },
+]
+readme = "README.md"
+license = { text = "Commercial" }
+requires-python = ">=3.9"
+dependencies = [
+    "langgraph>=0.2.6",
+    "langchain-openai>=0.1.22",
+    "langchain-google-genai>=2.0.8",
+    "langchain>=0.2.14",
+    "python-dotenv>=1.0.1",
+    "langchain-community>=0.2.17",
+    "tavily-python>=0.4.0",
+    "requests>=2.32.3",
+    "types-requests>=2.32.0.20241016",
+    "langchain-groq>=0.2.1",
+    "transformers>=4.46.2",
+    "composio-langgraph>=0.7.0",
+]
+
+
+[project.optional-dependencies]
+dev = ["mypy>=1.11.1", "ruff>=0.6.1"]
+
+[build-system]
+requires = ["setuptools>=73.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["react_agent"]
+
+[tool.setuptools.package-dir]
+"react_agent" = "src/react_agent"
+
+[tool.setuptools.package-data]
+"*" = ["py.typed"]
+
+[tool.ruff]
+lint.select = [
+    "E",    # pycodestyle
+    "F",    # pyflakes
+    "I",    # isort
+    "D",    # pydocstyle
+    "D401", # First line should be in imperative mood
+    "T201",
+    "UP",
+]
+lint.ignore = [
+    "UP006",
+    "UP007",
+    # We actually do want to import from typing_extensions
+    "UP035",
+    # Relax the convention by _not_ requiring documentation for every function parameter.
+    "D417",
+    "E501",
+]
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["D", "UP"]
+[tool.ruff.lint.pydocstyle]
+convention = "google"

@@ -1,0 +1,80 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Frontend",
+            "type": "python",
+            "request": "launch",
+            "module": "streamlit",
+            "args": [
+                "run",
+                "run/web.py"
+            ],
+            "justMyCode": true,
+            "presentation": {
+                "hidden": false,
+                "group": "app",
+                "order": 1
+            }
+        },
+        {
+            "name": "Run Backend",
+            "type": "python",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": ["run.server:app", "--host", "0.0.0.0", "--port", "8080", "--reload"],
+            "justMyCode": true,
+            "presentation": {
+                "hidden": false,
+                "group": "app",
+                "order": 2
+            }
+        },
+        {
+            "name": "Run with UV (Frontend)",
+            "type": "python",
+            "request": "launch",
+            "module": "uv",
+            "args": ["run", "web"],
+            "justMyCode": true,
+            "presentation": {
+                "hidden": false,
+                "group": "uv",
+                "order": 1
+            }
+        },
+        {
+            "name": "Run with UV (Backend)",
+            "type": "python",
+            "request": "launch",
+            "module": "uv",
+            "args": ["run", "server"],
+            "justMyCode": true,
+            "presentation": {
+                "hidden": false,
+                "group": "uv",
+                "order": 2
+            }
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Run Full App (Direct)",
+            "configurations": ["Run Backend", "Run Frontend"],
+            "presentation": {
+                "hidden": false,
+                "group": "app",
+                "order": 3
+            }
+        },
+        {
+            "name": "Run Full App (UV)",
+            "configurations": ["Run with UV (Backend)", "Run with UV (Frontend)"],
+            "presentation": {
+                "hidden": false,
+                "group": "uv",
+                "order": 3
+            }
+        }
+    ]
+} 

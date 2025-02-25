@@ -1,0 +1,32 @@
+[project]
+name = "ai-powered-ecommerce"
+version = "0.1.0"
+description = "Build a simple Agentic Ecommerce platform"
+readme = "README.md"
+authors = [{ name = "Asharib", email = "asharibali@proton.me" }]
+requires-python = ">=3.11"
+
+dependencies = [
+    "streamlit",
+    "langchain",
+    "langchain_core",
+    "langchain_community",
+    "python-dotenv",
+    "langchain-groq",
+    "fastapi",
+    "uvicorn",
+    "pydantic",
+    "groq",
+]
+
+[project.scripts]
+web = "run.web:entry_point"
+server = "run.server:main"
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]

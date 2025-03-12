@@ -66,6 +66,6 @@ To review what happened during your agent run, navigate to the [Trace viewer in 
 
 Learn how to build more complex agentic flows:
 
-- Learn about how to configure [Agents](https://openai.github.io/openai-agents-python/agents/).
-- Learn about [running agents](https://openai.github.io/openai-agents-python/running_agents/).
-- Learn about [tools](https://openai.github.io/openai-agents-python/tools/), [guardrails](https://openai.github.io/openai-agents-python/guardrails/), and [models](https://openai.github.io/openai-agents-python/models/).
+- Learn about how to configure [Agents](https://openai.github.io/openai-agents-python/agents/)
+- Learn about [running agents](https://openai.github.io/openai-agents-python/running_agents/)
+- Learn about [tools](https://openai.github.io/openai-agents-python/tools/), [guardrails](https://openai.github.io/openai-agents-python/guardrails/), and [models](https://openai.github.io/openai-agents-python/models/)

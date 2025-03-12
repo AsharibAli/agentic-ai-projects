@@ -7,6 +7,14 @@
     {
       "product_name": "Smart TV",
       "slot": 5
+    },
+    {
+      "product_name": "Smart TV",
+      "slot": 5
+    },
+    {
+      "product_name": "Smart TV",
+      "slot": 5
     }
   ],
   "Office Chair": [
@@ -37,9 +45,21 @@
     {
       "product_name": "Laptop Charger",
       "slot": 2
+    },
+    {
+      "product_name": "Laptop Charger",
+      "slot": 2
     }
   ],
   "Refrigerator": [
+    {
+      "product_name": "Refrigerator",
+      "slot": 5
+    },
+    {
+      "product_name": "Refrigerator",
+      "slot": 5
+    },
     {
       "product_name": "Refrigerator",
       "slot": 5
@@ -61,6 +81,12 @@
     {
       "product_name": "Wireless Earbuds",
       "slot": 5
+    }
+  ],
+  "string": [
+    {
+      "product_name": "string",
+      "slot": 1
     }
   ]
 }

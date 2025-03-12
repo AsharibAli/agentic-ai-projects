@@ -14,10 +14,10 @@ def apply_custom_style():
         <style>
             .stApp {
                 background-color: #87CEEB;
-                color: black;
+                color: white;
             }
             .stMarkdown, .stTitle, .stTextInput > label, .stCheckbox > label {
-                color: black;
+                color: white;
             }
         </style>
         """,

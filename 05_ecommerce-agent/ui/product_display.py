@@ -3,7 +3,7 @@ from services.api_service import send_post_request
 
 def display_product(col, product_name, product_info, index):
     with col:
-        st.image(product_info["image"], use_column_width=True)
+        st.image(product_info["image"], use_container_width=True)
         st.markdown(f"**{product_name}**")
         if st.checkbox(f"Select {product_name}", key=f"checkbox_{index}"):
             details_html = product_info["details"].replace('\n', '<br>')

@@ -8,4 +8,4 @@ class Config:
     DB_FILE = "database/company_db.json"
 
 APP_TITLE = " 🛒 Asharib Shopping Mart 🛒"
-API_URL = "http://127.0.0.1:8080/llm"
+API_URL = "http://localhost:8080/llm"

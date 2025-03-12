@@ -5,31 +5,32 @@ import asyncio
 # Create an agent specialized in Pakistan-related questions
 pakistan_agent = Agent(
     name="Pakistan Agent",
+    handoff_description="Specialist agent for Pakistan-related questions",  # Description used when referring to this agent
     instructions="You are a helpful assistant that can answer questions about Pakistan.",
 )
 
-# Create an agent specialized in historical topics
-history_tutor_agent = Agent(
-    name="History Tutor",
-    handoff_description="Specialist agent for historical questions",  # Description used when referring to this agent
-    instructions="You provide assistance with historical queries. Explain important events and context clearly.",
+# Create an agent specialized in India-related questions
+india_agent = Agent(
+    name="India Agent",
+    handoff_description="Specialist agent for india-related questions",  # Description used when referring to this agent
+    instructions="You are a helpful assistant that can answer questions about India.",
 )
 
-# Create an agent specialized in mathematical problems
-math_tutor_agent = Agent(
-    name="Math Tutor",
-    handoff_description="Specialist agent for mathematical questions",  # Description used when referring to this agent
-    instructions="You provide assistance with mathematical queries. Explain the concepts and steps clearly.",
+# Create an agent specialized in USA-related questions
+usa_agent = Agent(
+    name="USA Agent",
+    handoff_description="Specialist agent for USA-related questions",  # Description used when referring to this agent
+    instructions="You are a helpful assistant that can answer questions about USA.",
 )
 
 # Create a triage agent that will direct questions to the appropriate specialist agent
 trainge_agent = Agent(
     name="Trainge Agent",
-    instructions="You determine which agent to use based on the user's homework question",
+    instructions="You determine which agent to use based on the user's country question",
     handoffs=[
-        history_tutor_agent,
-        math_tutor_agent,
         pakistan_agent,
+        india_agent,
+        usa_agent,
     ],  # List of specialist agents this agent can refer to
 )
 
@@ -37,7 +38,7 @@ trainge_agent = Agent(
 # Define the main async function that will run our agent
 async def main():
     # Run the triage agent with a specific question and await its response
-    result = await Runner.run(trainge_agent, "Who started the Pakistan Movement?")
+    result = await Runner.run(trainge_agent, "What is the Capital of Pakistan?")
     # Print the final response from the agent
     print(result.final_output)
 

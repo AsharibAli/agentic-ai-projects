@@ -1,0 +1,12 @@
+[project]
+name = "fastapi-oas"
+version = "0.1.0"
+description = "A simple chatbot API build with FastAPI and OpenAI Agents SDK"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.115.12",
+    "openai-agents>=0.0.16",
+    "pytest>=8.3.5",
+    "pytest-asyncio>=0.26.0",
+]

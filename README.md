@@ -11,3 +11,4 @@ These project combines powerful tools to create an advanced AI development envir
 - **LangGraph**: A stateful orchestration framwork that brings added control to agent workflows
 - **Streamlit**: A framework for building custom web apps for LLM applications
 - **FastAPI**: A modern, fast (high-performance), web framework for building APIs
+- **OpenAI Agents SDK**: A lightweight (simple) framework for building AI Agents.
